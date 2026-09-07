@@ -1,4 +1,4 @@
-/* Looters Brand / Group Ltd - Shared Styles */
+/* Looters Computas - Shared Styles */
 :root {
   --purple: #6b21a8;
   --purple-light: #a855f7;
@@ -250,7 +250,7 @@ body {
   padding: 2rem 1.25rem 4rem;
 }
 
-/* Hero / Group Ltd logo */
+/* Hero */
 .hero {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -315,7 +315,7 @@ body {
   letter-spacing: 0.03em;
 }
 
-/* Store cards grid - inspired by the Google cards screenshot */
+/* Store cards */
 .stores-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -498,7 +498,6 @@ body {
   margin-top: 1rem;
 }
 
-/* AfterPay mention in footer */
 .afterpay-note {
   display: inline-flex;
   align-items: center;
@@ -511,7 +510,7 @@ body {
   margin: 0.75rem 0;
 }
 
-/* ========== PRODUCT PAGE SPECIFICS ========== */
+/* ========== PRODUCT PAGE ========== */
 .product-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -523,17 +522,6 @@ body {
   .product-layout {
     grid-template-columns: 1fr;
   }
-}
-
-.product-gallery img {
-  width: 100%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.product-info h1 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
 }
 
 .product-price {
@@ -593,32 +581,46 @@ body {
   font-size: 1.3rem;
 }
 
-/* Cart badge etc */
-.cart-icon {
-  position: relative;
-  padding: 0.4rem;
-  border-radius: 50%;
-  transition: var(--transition);
+/* ========== LOOTZY MASCOT ========== */
+.lootzy-walker {
+  position: fixed;
+  bottom: 20px;
+  left: -120px;
+  width: 90px;
+  height: auto;
+  z-index: 999;
+  pointer-events: none;
+  animation: lootzyWalk 28s linear infinite;
+  filter: drop-shadow(0 4px 12px rgba(107, 33, 168, 0.35));
 }
 
-.cart-icon:hover {
-  background: var(--purple-opacity);
+@keyframes lootzyWalk {
+  0%   { left: -120px; transform: scaleX(1); }
+  45%  { left: calc(100% + 20px); transform: scaleX(1); }
+  50%  { left: calc(100% + 20px); transform: scaleX(-1); }
+  95%  { left: -120px; transform: scaleX(-1); }
+  100% { left: -120px; transform: scaleX(1); }
 }
 
-/* Utility */
-.hidden {
-  display: none !important;
+.lootzy-header {
+  height: 38px;
+  width: auto;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
 }
 
-.text-center {
-  text-align: center;
+.lootzy-header:hover {
+  transform: scale(1.15) rotate(-8deg);
 }
 
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mb-2 { margin-bottom: 1rem; }
+@media (max-width: 600px) {
+  .lootzy-walker {
+    display: none;
+  }
+}
 
-/* Responsive header */
+/* Responsive */
 @media (max-width: 768px) {
   .header-nav {
     display: none;
@@ -634,7 +636,6 @@ body {
   }
 }
 
-/* Purple focus for accessibility */
 :focus-visible {
   outline: 3px solid var(--purple-light);
   outline-offset: 2px;
