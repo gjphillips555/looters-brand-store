@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Looters Brand</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/Group-Ltd.png" alt="Group Ltd" id="headerLogoImg">
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="computas.html" class="nav-link">Computas</a>
+        <a href="software.html" class="nav-link">Software</a>
+        <a href="apparel.html" class="nav-link">Apparel</a>
+        <a href="#cart" class="nav-link cart-icon">🛒 <span class="cart-count" style="display:none;background:var(--purple);color:white;font-size:0.7rem;padding:0.1rem 0.4rem;border-radius:999px;">0</span></a>
+        <button class="google-auth" type="button"></button>
+      </nav>
+      <button class="hamburger" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="computas.html" class="nav-link">Computas</a>
+      <a href="software.html" class="nav-link">Software</a>
+      <a href="apparel.html" class="nav-link">Apparel</a>
+      <a href="#cart" class="nav-link">Cart</a>
+      <button class="google-auth" type="button" style="margin-top:0.5rem;justify-content:center;"></button>
+    </div>
+  </header>
+
+  <div class="crypto-ticker"><div class="ticker-track"><span class="ticker-item">Loading…</span></div></div>
+
+  <main class="main-content">
+    <div class="afterpay-banner" style="margin-bottom:1.5rem;">
+      <span class="badge">AFTERPAY</span>
+      <span>Afterpay available via TradeMe checkout on this item.</span>
+    </div>
+
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div id="productImage" style="width:100%;aspect-ratio:1;background:linear-gradient(135deg,#1e1b4b,#4c1d95);border-radius:16px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.4rem;font-weight:600;box-shadow:var(--shadow);">
+          Product Image
+        </div>
+      </div>
+
+      <div class="product-info">
+        <p style="color:var(--purple);font-weight:600;font-size:0.9rem;margin-bottom:0.25rem;" id="storeLabel">Looters Brand</p>
+        <h1 id="productTitle">Product Name</h1>
+        <p id="productDesc" style="color:var(--gray);margin:0.75rem 0 1rem;"></p>
+        <p class="product-price" id="productPrice">NZ$0</p>
+
+        <div class="shipping-options">
+          <p style="font-weight:600;margin-bottom:0.5rem;">Shipping options</p>
+          <label>
+            <input type="radio" name="shipping" value="north" checked>
+            North Island – <span id="shipNorth">NZ$0.00</span>
+          </label>
+          <label>
+            <input type="radio" name="shipping" value="south">
+            South Island – <span id="shipSouth">NZ$0.00</span>
+          </label>
+          <p style="font-size:0.8rem;color:var(--gray);margin-top:0.5rem;">
+            Shipping prices match the current TradeMe listing for this item.
+          </p>
+        </div>
+
+        <div class="payment-section">
+          <p style="font-weight:600;margin-bottom:0.9rem;">Purchase options</p>
+
+          <button class="btn-trademe" id="btnTrademe" type="button" style="margin-bottom:0.75rem;">
+            <span class="kiwi" aria-hidden="true">🥝</span>
+            Buy Via Trademe
+            <span style="font-size:0.85rem;opacity:0.9;">· Kevin the Kiwi</span>
+          </button>
+
+          <button class="btn" id="btnPaypal" type="button"
+            style="width:100%;max-width:320px;margin-bottom:0.75rem;background:#0070ba;color:white;border-color:#0070ba;">
+            Pay with PayPal
+          </button>
+
+          <button class="btn" id="btnAfterpay" type="button"
+            style="width:100%;max-width:320px;margin-bottom:0.5rem;background:#b2fce4;color:#065f46;border:2px solid #6ee7b7;font-weight:700;">
+            Afterpay (via TradeMe)
+          </button>
+
+          <p style="font-size:0.85rem;color:var(--gray);margin-top:1rem;">
+            Afterpay is provided through TradeMe checkout. PayPal is a direct payment option on this site.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="policy.html">Store Policy</a>
+        <a href="warranty.html">Warranty & Terms</a>
+        <a href="index.html">Home</a>
+      </div>
+      <div class="afterpay-note">Afterpay available via TradeMe · Subject to eligibility & Afterpay Terms</div>
+      <p class="footer-legal">
+        All products sold by Group Ltd trading as Looters Brand. Prices in NZD. Consumer Guarantees Act 1993 applies.
+        Afterpay is provided by Afterpay Australia Pty Ltd / Afterpay NZ via TradeMe.
+      </p>
+      <p class="copyright">© <span id="year"></span> Group Ltd / Looters Brand. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Flexible product shape – TradeMe listings and future dropship items use the same structure
+    const products = {
+      'probook15': {
+        title: 'Looters ProBook 15',
+        desc: 'Intel i7, 16GB RAM, 512GB SSD. Perfect for work & creation. Comes with manufacturer warranty.',
+        price: 1899,
+        shipNorth: 12.00,
+        shipSouth: 18.00,
+        store: 'computas',
+        imageText: 'ProBook 15"',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'forge-rtx': {
+        title: 'Looters Forge RTX',
+        desc: 'RTX 4070, Ryzen 7, 32GB RAM. Ready for 1440p gaming and content creation.',
+        price: 2499,
+        shipNorth: 18.00,
+        shipSouth: 28.00,
+        store: 'computas',
+        imageText: 'Forge RTX',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'airlite14': {
+        title: 'Looters AirLite 14',
+        desc: 'Ultra-light 1.2kg, all-day battery, stunning display. Ideal for travel.',
+        price: 1449,
+        shipNorth: 10.00,
+        shipSouth: 16.00,
+        store: 'computas',
+        imageText: 'AirLite 14',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'create-pro': {
+        title: 'Looters Create Pro',
+        desc: 'Full creative toolkit – photo, video, design & more. 1-year licence. Digital delivery.',
+        price: 349,
+        shipNorth: 0,
+        shipSouth: 0,
+        store: 'software',
+        imageText: 'Create Pro',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'officeflow': {
+        title: 'OfficeFlow Annual',
+        desc: 'Documents, sheets, presentations + cloud storage. Business ready.',
+        price: 189,
+        shipNorth: 0,
+        shipSouth: 0,
+        store: 'software',
+        imageText: 'OfficeFlow',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'shield-total': {
+        title: 'Shield Total 5-Device',
+        desc: 'Antivirus, VPN & identity protection for up to 5 devices. 1-year.',
+        price: 99,
+        shipNorth: 0,
+        shipSouth: 0,
+        store: 'software',
+        imageText: 'Shield Total',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'essential-tee': {
+        title: 'Looters Essential Tee',
+        desc: 'Soft cotton blend, relaxed fit. Multiple colours. Made for daily wear.',
+        price: 39,
+        shipNorth: 6.50,
+        shipSouth: 9.50,
+        store: 'apparel',
+        imageText: 'Essential Tee',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'apex-hoodie': {
+        title: 'Looters Apex Hoodie',
+        desc: 'Mid-weight fleece, brushed interior, durable zip. Ideal for cool days.',
+        price: 89,
+        shipNorth: 7.50,
+        shipSouth: 11.00,
+        store: 'apparel',
+        imageText: 'Apex Hoodie',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      },
+      'utility-cargo': {
+        title: 'Looters Utility Cargo',
+        desc: 'Stretch fabric, multiple pockets, tapered leg. Built for movement.',
+        price: 79,
+        shipNorth: 7.50,
+        shipSouth: 11.00,
+        store: 'apparel',
+        imageText: 'Utility Cargo',
+        trademeUrl: 'https://www.trademe.co.nz/',
+        image: null
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || 'probook15';
+    const product = products[id] || products['probook15'];
+
+    const logoMap = {
+      computas: 'images/Computas.png',
+      software: 'images/Software.png',
+      apparel: 'images/Apparel.png'
+    };
+    document.getElementById('headerLogoImg').src = logoMap[product.store] || 'images/Group-Ltd.png';
+
+    document.getElementById('productTitle').textContent = product.title;
+    document.getElementById('productDesc').textContent = product.desc;
+    document.getElementById('productPrice').textContent = 'NZ$' + product.price.toLocaleString();
+    document.getElementById('storeLabel').textContent = product.store.charAt(0).toUpperCase() + product.store.slice(1) + ' · Looters Brand';
+    document.getElementById('productImage').textContent = product.imageText;
+
+    document.getElementById('shipNorth').textContent = product.shipNorth === 0 ? 'Free (digital)' : 'NZ$' + product.shipNorth.toFixed(2);
+    document.getElementById('shipSouth').textContent = product.shipSouth === 0 ? 'Free (digital)' : 'NZ$' + product.shipSouth.toFixed(2);
+
+    document.getElementById('btnTrademe').addEventListener('click', () => {
+      window.open(product.trademeUrl, '_blank');
+    });
+
+    document.getElementById('btnAfterpay').addEventListener('click', () => {
+      window.open(product.trademeUrl, '_blank');
+    });
+
+    document.getElementById('btnPaypal').addEventListener('click', () => {
+      const shipping = document.querySelector('input[name="shipping"]:checked')?.value || 'north';
+      const shipCost = shipping === 'south' ? product.shipSouth : product.shipNorth;
+      const total = product.price + shipCost;
+
+      alert(
+        `PayPal checkout\n\n` +
+        `Item: ${product.title}\n` +
+        `Shipping (${shipping === 'south' ? 'South Island' : 'North Island'}): NZ$${shipCost.toFixed(2)}\n` +
+        `Total: NZ$${total.toFixed(2)}\n\n` +
+        `This will become a real PayPal payment. Structure is ready for Stripe or dropshipping later.`
+      );
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
