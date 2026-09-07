@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looters Brand | Group Ltd – Premium Stores</title>
+  <meta name="description" content="Shop Computas, Software and Apparel at Looters Brand by Group Ltd. Afterpay available. Quality products with warranty.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/Group-Ltd.png" type="image/png">
+</head>
+<body>
+  <!-- STICKY HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/Group-Ltd.png" alt="Group Ltd / Looters Brand">
+      </a>
+
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="computas.html" class="nav-link">Computas</a>
+        <a href="software.html" class="nav-link">Software</a>
+        <a href="apparel.html" class="nav-link">Apparel</a>
+        <a href="#cart" class="nav-link cart-icon" title="Cart">
+          🛒 <span class="cart-count" style="display:none; background:var(--purple); color:white; font-size:0.7rem; padding:0.1rem 0.4rem; border-radius:999px; margin-left:2px;">0</span>
+        </a>
+        <button class="google-auth" type="button" aria-label="Sign in with Google">
+          <!-- Populated by JS -->
+        </button>
+      </nav>
+
+      <button class="hamburger" aria-label="Open menu" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown -->
+    <div class="mobile-menu">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="computas.html" class="nav-link">Computas</a>
+      <a href="software.html" class="nav-link">Software</a>
+      <a href="apparel.html" class="nav-link">Apparel</a>
+      <a href="#cart" class="nav-link">Cart</a>
+      <button class="google-auth" type="button" style="margin-top:0.5rem; justify-content:center;">
+        <!-- Populated by JS -->
+      </button>
+    </div>
+  </header>
+
+  <!-- CRYPTO TICKER (not sticky) -->
+  <div class="crypto-ticker" aria-label="Live crypto prices in NZD">
+    <div class="ticker-track">
+      <!-- Filled by JS -->
+      <span class="ticker-item">Loading live prices…</span>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="main-content">
+    <!-- Hero with Group Ltd logo centred -->
+    <section class="hero">
+      <img src="images/Group-Ltd.png" alt="Group Ltd – Looters Brand" class="hero-logo">
+      <h1>Welcome to Looters Brand</h1>
+      <p>Curated technology, software and apparel from trusted physical stores. Quality you can feel. Afterpay available on all purchases.</p>
+    </section>
+
+    <!-- AfterPay advertising -->
+    <div class="afterpay-banner">
+      <span class="badge">AFTERPAY</span>
+      <span>Shop now, pay later in 4 interest-free instalments. Available across all Looters stores.</span>
+    </div>
+
+    <!-- Three store cards -->
+    <section class="stores-grid" aria-label="Our Stores">
+      <!-- Computas -->
+      <article class="store-card">
+        <div class="store-card-image">
+          <img src="images/computas-interior.jpg" alt="Computas physical store interior – premium tech retail space">
+          <span class="store-card-badge">COMPUTAS</span>
+        </div>
+        <div class="store-card-body">
+          <h2>Computas</h2>
+          <p>Premium computers, laptops, components and tech accessories from our flagship physical store. Expert advice and after-sales support included.</p>
+          <a href="computas.html" class="btn btn-primary">View details</a>
+        </div>
+      </article>
+
+      <!-- Software -->
+      <article class="store-card">
+        <div class="store-card-image">
+          <img src="images/software-interior.jpg" alt="Software store interior – modern digital products retail">
+          <span class="store-card-badge">SOFTWARE</span>
+        </div>
+        <div class="store-card-body">
+          <h2>Software</h2>
+          <p>Licensed software, creative suites, productivity tools and digital downloads. Instant delivery options and volume licensing available for businesses.</p>
+          <a href="software.html" class="btn btn-primary">View details</a>
+        </div>
+      </article>
+
+      <!-- Apparel -->
+      <article class="store-card">
+        <div class="store-card-image">
+          <img src="images/apparel-interior.jpg" alt="Apparel physical store interior – clothing retail floor">
+          <span class="store-card-badge">APPAREL</span>
+        </div>
+        <div class="store-card-body">
+          <h2>Apparel</h2>
+          <p>Quality everyday and performance clothing from our dedicated retail space. Comfortable fits, durable fabrics and seasonal collections in-store and online.</p>
+          <a href="apparel.html" class="btn btn-primary">View details</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Extra AfterPay mention -->
+    <p class="text-center" style="color:var(--gray); font-size:0.95rem;">
+      <strong style="color:#065f46;">Afterpay</strong> accepted at checkout on eligible items. Subject to Afterpay approval and terms.
+    </p>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="policy.html">Store Policy</a>
+        <a href="warranty.html">Warranty & Terms</a>
+        <a href="computas.html">Computas</a>
+        <a href="software.html">Software</a>
+        <a href="apparel.html">Apparel</a>
+      </div>
+
+      <div class="afterpay-note">
+        <span>Afterpay available</span> · Subject to eligibility & Afterpay Terms
+      </div>
+
+      <p class="footer-legal">
+        All products sold by Group Ltd trading as Looters Brand. Prices in NZD. Consumer Guarantees Act 1993 applies. 
+        Afterpay is provided by Afterpay Australia Pty Ltd / Afterpay NZ. Standard Afterpay terms and eligibility criteria apply. 
+        Full warranty details and returns policy available on the Store Policy and Warranty pages. 
+        This website does not constitute an offer where prohibited.
+      </p>
+
+      <p class="copyright">
+        © <span id="year"></span> Group Ltd / Looters Brand. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
